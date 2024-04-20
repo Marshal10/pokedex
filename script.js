@@ -18,8 +18,11 @@ const colors = {
 };
 
 const updatePokemonUI = (pokemon) => {
-  const cardEl = document.createElement("div");
+  const cardEl = document.createElement("a");
   cardEl.classList.add("pokemon-card");
+  const pokemonInfo=`https://pokemondb.net/pokedex/${pokemon.name}`
+  cardEl.setAttribute('href',pokemonInfo)
+  cardEl.setAttribute('target','_blank')
   const pokemonId=pokemon.id.toString().padStart(3,'0')
   const pokemonName=pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
   const types=pokemon.types.map(type=>type.type.name)
@@ -29,7 +32,7 @@ const updatePokemonUI = (pokemon) => {
 
   const pokemonHtml = `
     <div class="image-container">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="Bulbasaur" id="pokemon-image">
+                <img src="${pokemon.sprites.front_default}" alt="Bulbasaur" id="pokemon-image">
     </div>
     <div class="stats-container">
         <div class="number" id="number">#${pokemonId}</div>

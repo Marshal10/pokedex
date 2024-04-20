@@ -38,6 +38,10 @@ h1{
     padding: 20px;
     margin: 10px;
     text-align: center;
+    transition: transform 0.5s;
+    text-decoration: none;
+    color: initial;
+    cursor: pointer;
 }
 
 .image-container{
@@ -74,4 +78,8 @@ img{
 
 .type{
     font-size: 0.9rem;
+}
+
+.pokemon-card:hover{
+    transform: scale(1.2);
 }
