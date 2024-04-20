@@ -17,6 +17,25 @@ const colors = {
   normal: "#f5f5f5",
 };
 
+const updatePokemonUI = (pokemon) => {
+  const cardEl = document.createElement("div");
+  cardEl.classList.add("pokemon-card");
+
+  const pokemonHtml = `
+    <div class="image-container">
+                <img src="https://i.pinimg.com/originals/d6/61/96/d66196beb60d306a966ea39ed11c2b3d.png" alt="Bulbasaur" id="pokemon-image">
+    </div>
+    <div class="stats-container">
+        <div class="number" id="number">#001</div>
+        <div class="name" id="name">Bulbasaur</div>
+        <small class="type">Type: <span id="type">grass</span></small>
+    </div>
+    `;
+
+    cardEl.innerHTML=pokemonHtml
+    pokemonContainer.appendChild(cardEl)
+};
+
 const fetchPokemons = async () => {
   for (let i = 1; i < pokemonCount; i++) {
     await getPokemon(i);
