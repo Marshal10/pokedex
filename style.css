@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #efefbb;
+    background: linear-gradient(to right,#d4d3dd,#efefbb);
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.pokemon-container{
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.pokemon-card{
+    background-color: #defde0;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.image-container{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+}
+
+img{
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+.stats-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.number{
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.name{
+    letter-spacing: 1px;
+}
