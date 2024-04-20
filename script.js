@@ -1,9 +1,9 @@
 const pokemonContainer = document.querySelector(".pokemon-container");
-const pokemonCount = 10;
+const pokemonCount = 151;
 const colors = {
   fire: "#fddfdf",
   grass: "#defde0",
-  elelctric: "#fcf7de",
+  electric: "#fcf7de",
   water: "#def3fd",
   ground: "#f4e7da",
   rock: "#d5d5d4",
@@ -20,15 +20,21 @@ const colors = {
 const updatePokemonUI = (pokemon) => {
   const cardEl = document.createElement("div");
   cardEl.classList.add("pokemon-card");
+  const pokemonId=pokemon.id.toString().padStart(3,'0')
+  const pokemonName=pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
+  const types=pokemon.types.map(type=>type.type.name)
+  const mainType=types[0]
+  const typesStr=types.toString()
+  cardEl.style.backgroundColor=colors[mainType]
 
   const pokemonHtml = `
     <div class="image-container">
-                <img src="https://i.pinimg.com/originals/d6/61/96/d66196beb60d306a966ea39ed11c2b3d.png" alt="Bulbasaur" id="pokemon-image">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="Bulbasaur" id="pokemon-image">
     </div>
     <div class="stats-container">
-        <div class="number" id="number">#001</div>
-        <div class="name" id="name">Bulbasaur</div>
-        <small class="type">Type: <span id="type">grass</span></small>
+        <div class="number" id="number">#${pokemonId}</div>
+        <div class="name" id="name">${pokemonName}</div>
+        <small class="type">Type: <span id="type">${typesStr}</span></small>
     </div>
     `;
 

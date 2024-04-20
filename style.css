@@ -69,4 +69,9 @@ img{
 
 .name{
     letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.type{
+    font-size: 0.9rem;
 }
